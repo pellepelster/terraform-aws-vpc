@@ -22,9 +22,9 @@ variable "ipv4_primary_cidr_block_association" {
 
 variable "ipv4_additional_cidr_block_associations" {
   type = map(object({
-    ipv4_cidr_block     = string
-    ipv4_ipam_pool_id   = string
-    ipv4_netmask_length = number
+    ipv4_cidr_block     = optional(string)
+    ipv4_ipam_pool_id   = optional(string)
+    ipv4_netmask_length = optional(number)
   }))
   description = <<-EOT
     IPv4 CIDR blocks to assign to the VPC.
